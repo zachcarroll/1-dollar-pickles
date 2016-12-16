@@ -1,12 +1,31 @@
-<h1>1 Dollar Pickles</h1>
-
-<!-- <nav>
+<!--
+MOVE THIS TO SIDENAV  
+<nav>
   <a routerLink="/" routerLinkActive="active">Home</a>
   <a routerLink="/about" routerLinkActive="active">About</a>
-  <a routerLink="/foobar" routerLinkActive="active">Foo Bar</a>
-</nav> -->
+  <a routerLink="/pickle-jar" routerLinkActive="active">Pickle Jar</a>
+</nav>  
+-->
 
-<button (click)="login()">Login</button>
-<button (click)="logout()">Logout</button>
+<md-toolbar color="primary">
+  
+  <span>1 Dollar Pickles</span>
+
+  <span class="fill-remaining-space"></span>
+
+  <span class="app-bar-buttons-container">
+    <button md-raised-button 
+            *ngIf="!(af.auth | async)?.uid"
+            color="accent" 
+            (click)="login()">Login</button>
+
+    <button md-raised-button 
+            *ngIf="(af.auth | async)?.uid"
+            color="accent" 
+            (click)="logout()">Logout</button>    
+  </span>
+
+</md-toolbar>
+
 
 <router-outlet></router-outlet>

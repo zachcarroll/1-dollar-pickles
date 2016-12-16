@@ -1,0 +1,7 @@
+.logo-container {
+  background-image: url('assets/ogpickles.png');
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
