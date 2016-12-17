@@ -1,3 +1,40 @@
+<md-sidenav-layout>
+  <md-sidenav #start mode="over">
+
+    <nav>
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/pickle-jar" routerLinkActive="active">Pickle Jar</a>
+    </nav>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <i (click)="start.open()" class="material-icons hamburger-icon">menu</i>
+    
+    <span>1 Dollar Pickles</span>
+
+    <span class="fill-remaining-space"></span>
+
+    <span class="app-bar-buttons-container">
+      <button md-raised-button 
+              *ngIf="!(af.auth | async)?.uid"
+              color="accent" 
+              (click)="login()">Login</button>
+
+      <button md-raised-button 
+              *ngIf="(af.auth | async)?.uid"
+              color="accent" 
+              (click)="logout()">Logout</button>    
+    </span>
+
+  </md-toolbar>
+
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-layout>
+
 <!--
 MOVE THIS TO SIDENAV  
 <nav>
@@ -7,25 +44,4 @@ MOVE THIS TO SIDENAV
 </nav>  
 -->
 
-<md-toolbar color="primary">
-  
-  <span>1 Dollar Pickles</span>
 
-  <span class="fill-remaining-space"></span>
-
-  <span class="app-bar-buttons-container">
-    <button md-raised-button 
-            *ngIf="!(af.auth | async)?.uid"
-            color="accent" 
-            (click)="login()">Login</button>
-
-    <button md-raised-button 
-            *ngIf="(af.auth | async)?.uid"
-            color="accent" 
-            (click)="logout()">Logout</button>    
-  </span>
-
-</md-toolbar>
-
-
-<router-outlet></router-outlet>

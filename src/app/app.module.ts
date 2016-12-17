@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';

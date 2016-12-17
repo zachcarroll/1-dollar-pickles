@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-import { MdToolbar, MdButton } from '@angular/material';
+
 
 @Component({
   selector    : 'app-root',
