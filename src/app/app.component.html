@@ -1,10 +1,22 @@
-<md-sidenav-layout fullscreen>
+<!-- <md-sidenav-layout fullscreen> -->
+<md-sidenav-layout>
 
   <md-sidenav #start mode="over">
 
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/pickle-jar" routerLinkActive="active">Pickle Jar</a>
+    <a class="route"
+       routerLink="/"
+       (click)="start.close()"
+       routerLinkActive="active">HOME</a>
+    
+    <a class="route" 
+       routerLink="/about" 
+       (click)="start.close()"
+       routerLinkActive="active">ABOUT</a>
+    
+    <a class="route" 
+       routerLink="/pickle-jar" 
+       (click)="start.close()"
+       routerLinkActive="active">PICKLE JAR</a>
 
   </md-sidenav>
 
@@ -29,7 +41,9 @@
 
   </md-toolbar>
 
-  <router-outlet></router-outlet>
+  <div class="route-container">
+    <router-outlet></router-outlet>    
+  </div>
 
 </md-sidenav-layout>
 

@@ -8,5 +8,42 @@
 
 .hamburger-icon {
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
+}
+
+md-sidenav-layout, md-sidenav {
+  background-color: whitesmoke;
+  color: #333333;
+  height: 100%;
+}
+
+.md-sidenav-content {
+  padding: 8px;
+}
+
+md-sidenav {
+  width: 150px;
+  padding: 10px 20px 10px 12px;
+}
+
+.route-container {
+  padding: 20px;
+  background-color: whitesmoke;
+  color: #333333;
+}
+
+md-sidenav .route {
+  text-decoration: none;
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  outline: none;
+  outline: 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 3px;
+}
+
+md-sidenav .route:first-child {
+  border-top: 1px solid #eee;
 }
