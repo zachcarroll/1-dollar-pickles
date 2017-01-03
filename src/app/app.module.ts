@@ -13,10 +13,10 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PickleJarComponent } from './pickle-jar/pickle-jar.component';
+import { UploadComponent } from './upload/upload.component';
+
 
 // TODO: MOVE FIREBASE CONFIG TO ANOTHER FILE
-// TODO: MOVE ROUTES TO ANOTHER FILE
-
 export const firebaseConfig = {
   apiKey            : "AIzaSyCEhDtazttRvXn6_QiGlFHmkzs7SWCtMPc",
   authDomain        : "dollar-pickles.firebaseapp.com",
@@ -30,9 +30,11 @@ const firebaseAuthConfig = {
   method   : AuthMethods.Redirect
 }
 
+// TODO: MOVE ROUTES TO ANOTHER FILE
 const appRoutes: Routes = [
   { path : 'pickle-jar', component : PickleJarComponent },
   { path : 'about',      component : AboutComponent },
+  { path : 'upload',     component : UploadComponent },
   { path : '',           component : HomeComponent },
   { path : '**',         component : NotFoundComponent }
 ];
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     NotFoundComponent,
-    PickleJarComponent
+    PickleJarComponent,
+    UploadComponent
   ],
   imports      : [
     BrowserModule,

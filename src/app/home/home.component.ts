@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFire } from 'angularfire2';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public af: AngularFire) {}
 
   ngOnInit() {
+    // if user is authenticated, take them to the pickle jar page
+    this.af.auth.subscribe((auth) => {
+      if ( auth && auth.uid ) {
+        this.router.navigateByUrl("/pickle-jar");
+      }
+    });
   }
 
 }

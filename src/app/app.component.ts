@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(public af: AngularFire) {}
 
- login() {
+  login() {
     this.af.auth.login();
 
     // -----------------------------------------------

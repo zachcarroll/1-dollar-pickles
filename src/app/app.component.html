@@ -15,17 +15,21 @@
   </div>
 
   <div class="nav">
-    <a class="route"
-       routerLink="/"
-       routerLinkActive="active">HOME</a>
-    
+
     <a class="route" 
-       routerLink="/about" 
+       routerLink="/about"
        routerLinkActive="active">ABOUT</a>
     
-    <a class="route" 
+    <a *ngIf="(af.auth | async)?.uid"
+       class="route" 
        routerLink="/pickle-jar" 
        routerLinkActive="active">PICKLE JAR</a>
+
+    <a *ngIf="!(af.auth | async)?.uid"
+       class="route" 
+       routerLink="/upload" 
+       routerLinkActive="active">UPLOAD</a>
+
   </div>
 
 </div>
